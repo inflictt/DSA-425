@@ -42,3 +42,9 @@ def mergeSort(arr):
     return mergeCombine(left,right)
 
 mergeSort(arr)
+#first rec tree for left merge sort fucntion 
+    #             [4,1,3,9,7]
+    #            /           \
+    #       [4,1]            [3,9,7]
+    #      /    \
+    #    [4]    [1]

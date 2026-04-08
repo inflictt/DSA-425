@@ -32,3 +32,16 @@ for n in nums:
     new.append(sq_val)
 print(new)
 print(sorted(new))
+
+# mosrt opitmal 
+# lo = 0
+# hi = len(nums)-1
+# res= []
+# while lo<=hi:
+#     if nums[lo]*nums[lo]<nums[hi]*nums[hi]:
+#         res.append(nums[hi]*nums[hi])
+#         hi-=1
+#     else:
+#         res.append(nums[lo]*nums[lo])
+#         lo+=1
+# return res[::-1]

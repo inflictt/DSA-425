@@ -1,17 +1,18 @@
 # Graph input
 graph = [
-    [0, 4, 3, 0, 0, 0],
-    [4, 0, 1, 2, 0, 0],
-    [3, 1, 0, 4, 5, 0],
-    [0, 2, 4, 0, 2, 3],
-    [0, 0, 5, 2, 0, 6],
-    [0, 0, 0, 3, 6, 0]
+    [0, 2, 3, 4, 5, 6],
+    [7, 0, 9, 10, 11, 12],
+    [13, 14, 0, 16, 17, 18],
+    [19, 20, 21, 0, 23, 24],
+    [25, 26, 27, 28, 0, 30],
+    [31, 32, 33, 34, 35, 0]
 ]
 numVert = len(graph)
 # by default we kept this as we do in diksttra keeping infinity
 selected = [False]*numVert
 # as this is true my origin to start reaching other node/vbertice
 selected[0] = True
+totalCost = 0
 for k in range(numVert-1):  # -1 as we need n-1 edges / vertice only following the conditon off mst
     mini = float("inf")
     x, y = 0, 0  # x -> base vertex y-> the vertext x is triyng to reach
@@ -25,5 +26,7 @@ for k in range(numVert-1):  # -1 as we need n-1 edges / vertice only following t
                         mini = graph[i][j]
                         x = i
                         y = j
+    totalCost += graph[x][y]
     print(f"x [{x}] -> y [{y}] is : {graph[x][y]} ")
     selected[y] = True
+print(f" The total cost is => {totalCost}")
